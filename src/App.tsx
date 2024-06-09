@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Store from "./Store.tsx";
 import {Address, Restaurant} from "./model/Restaurant.ts";
+import BestMenu from "./BestMenu.tsx";
 
 const data: Restaurant = {
     name: '나의 식당',
@@ -33,6 +34,9 @@ const App: React.FC = () => {
     const changeAddress = (address: Address) => {
         setMyRestaurant({...myRestaurant, address: address})
     }
+    const showBestMenuName = (name: string) => {
+        return name
+    }
 
     return (
         <>
@@ -51,6 +55,9 @@ const App: React.FC = () => {
                 </button>
             </div>
             <Store info={myRestaurant} changeAddress={changeAddress} />
+            <br />
+            <strong>최고의 메뉴</strong>
+            <BestMenu name='불고기피자' price={1000} showBestMenuName={showBestMenuName} />
         </>
     )
 }
