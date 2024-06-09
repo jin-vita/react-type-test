@@ -56,7 +56,7 @@ const App: React.FC = () => {
             </div>
             <Store info={myRestaurant} changeAddress={changeAddress} />
             <br />
-            <strong>최고의 메뉴</strong>
+            <h3>최고의 메뉴</h3>
             <BestMenu name='불고기피자' price={1000} showBestMenuName={showBestMenuName} />
         </>
     )
